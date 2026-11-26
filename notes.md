@@ -82,7 +82,7 @@ Le geste d'une activité de mon ancien métier : conditionner des bocaux de cara
 
 # Tickets d'algorithmique -- séries 1 à 5
 
-**Méthode pour chaque ticket : 
+**Méthode pour chaque ticket :** 
 1. Reformuler : qu'est-ce-qui entre, qu'est-ce-qui sort ?
 2. Résoudre un exemple à la main.
 3. Ecrire le pseudo-code.
