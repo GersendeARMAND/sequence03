@@ -156,10 +156,120 @@ Le geste d'une activité de mon ancien métier : conditionner des bocaux de cara
                 Durée : TEXTE
             DEBUT
                 LIRE Minutes
-                TotalMinutes DIV 60 = Heures
-                TotalMinutes MOD 60 = Minutes
+                Heures <- TotalMinutes DIV 60
+                Minutes <- TotalMinutes MOD 60
                 Durée <- Heures, "h", Minutes, "min"
                 ECRIRE TotalMinutes donne "Durée"
             FIN
     -> 4. 
 
+* Prix TTC. Demander un prix hors taxes et un taux de TVA en pourcentage. Afficher le montant de la taxe et le prix TTC.
+    -> 1. Ce qui entre : prix hors taxes et taux de TVA en pourcentage ; ce qui sort : la taxe et le prix TTC.
+    -> 2. 
+
+    -> 3.   ALGORITHME Prix TTC
+            VARIABLES
+                prixHorsTaxes : REEL
+                tauxTVA : REEL
+                montantTVA : REEL
+                prixTTC : REEL
+            DEBUT
+                LIRE prixHorsTaxes
+                LIRE tauxTVA
+                montantTVA <- prixHorsTaxes * tauxTVA
+                prixTTC <- prixHorsTaxes + montantTVA
+                ECRIRE tauxTVA
+                ECRIRE prixTTC
+            FIN
+        -> 4.
+
+* Rendu de monnaie. Un montant entier en euros est saisi. Afficher le nombre minimal de billets de 10 €, de billets de 5 €, de pièces de 2 € et de pièces de 1 € pour le composer.
+    -> 1. Ce qui entre : un montant entier en euros ; ce qui sort : le nombre minimal de billets de 10 €, le nombre minimal de billets de 5 €, le nombre minimal de pièces de 2 €, et le nombre minimal de pièces de 1 €.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Rendu de monnaie
+            VARIABLES
+                montantEnt : ENTIER
+                nbrmin10 : ENTIER
+                nbrmin5 : ENTIER
+                nbrmin2 : ENTIER
+                nbrmin1 : ENTIER
+            DEBUT
+                LIRE montantEnt
+            **PASSSS FINIIIIIIIIIIIIII**
+            FIN
+
+## Série 2 -- Conditions
+
+* Majorité. Demander un âge, afficher "majeur" ou "mineur".
+    -> 1. Ce qui entre : un âge ; Ce qui sort : "majeur" ou "mineur".
+
+    -> 2. 
+
+    -> 3.   ALGORITHME Majorité
+            VARIABLES
+                age : ENTIER
+                majeur : ENTIER
+                mineur : ENTIER
+            DEBUT
+                SI age >= 18 ALORS
+                    ECRIRE "majeur"
+                SINON 
+                    ECRIRE "mineur"
+            FIN SI
+    
+    -> 4.
+
+* Parité. Demander un entier, afficher "pair" ou "impair".
+    -> 1. Ce qui entre : un entier ; ce qui sort : "pair" ou "impair"
+
+    -> 2.
+
+    -> 3.   ALGORITHME Parité
+            VARIABLES
+                unEntier : ENTIER
+                pair : ENTIER
+                impair : ENTIER
+            DEBUT
+                LIRE unENTIER
+                SI unEntier = 
+                **PASSSS FINIIIIIIIIIIIIII**
+            FIN
+
+* Le plus grand. Demander deux nombres, afficher le plus grand. Que faites-vous s'ils sont égaux ?
+    -> 1. Ce qui entre : deux nombres ; ce qui sort : un nombre .......
+
+    -> 2.
+
+    -> 3.   ALGORITHME Le plus grand
+            VARIABLES
+                nombreUn : REEL
+                nombreDeux : REEL
+            DEBUT
+                LIRE nombreUn
+                LIRE nombreDeux
+                SI nombreUn > nombreDeux ALORS
+                    ECRIRE nombreUn
+                SINON nombreDeux
+            FIN
+
+* Tarif d'une sortie. Le tarif dépend de l'âge : moins de 12 ans, 5 € ; de 12 à 25 ans, 8 € ; de 26 à 64 ans, 12 € ; 65 ans et plus, 7 €. Demander l'âge, afficher le tarif.
+    -> 1. Ce qui entre : un âge ; ce qui sort : le tarif.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Tarif d'une sortie
+            VARIABLES
+                âge : ENTIER
+                moins12 : ENTIER
+                12_25 : ENTIER
+                26_64 : ENTIER
+                65_Plus : ENTIER
+                tarifM12 : ENTIER
+                tarif12_25 : ENTIER
+                tarif26_64 :  ENTIER
+                tarif65_Plus : ENTIER
+            DEBUT
+                LIRE **PASSSS FINIIIIIIIIIIIIII** 
+            FIN
