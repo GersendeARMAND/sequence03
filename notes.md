@@ -217,7 +217,8 @@ Le geste d'une activité de mon ancien métier : conditionner des bocaux de cara
                     ECRIRE "majeur"
                 SINON 
                     ECRIRE "mineur"
-            FIN SI
+                FIN SI
+            FIN
     
     -> 4.
 
@@ -252,6 +253,7 @@ Le geste d'une activité de mon ancien métier : conditionner des bocaux de cara
                 SI nombreUn > nombreDeux ALORS
                     ECRIRE nombreUn
                 SINON nombreDeux
+                FIN SI
             FIN
 
 * Tarif d'une sortie. Le tarif dépend de l'âge : moins de 12 ans, 5 € ; de 12 à 25 ans, 8 € ; de 26 à 64 ans, 12 € ; 65 ans et plus, 7 €. Demander l'âge, afficher le tarif.
@@ -271,5 +273,68 @@ Le geste d'une activité de mon ancien métier : conditionner des bocaux de cara
                 tarif26_64 :  ENTIER
                 tarif65_Plus : ENTIER
             DEBUT
-                LIRE **PASSSS FINIIIIIIIIIIIIII** 
+                tarifsM12 <- 5
+                tarif12_25 <- 8
+                tarif26_64 <- 12
+                tarif65_Plus <- 7
+                LIRE âge
+                SI âge < 12 ALORS
+                ECRIRE tarifsM12
+                SINON SI âge >= 12 ET âge < 26 ALORS
+                ECRIRE tarif12_25
+                SINON SI âge >= 26 ET âge <64 ALORS
+                ECRIRE tarif26_64
+                SINON SI âge >= 65 ALORS
+                ECRIRE tarif65_Plus
+                FIN SI
             FIN
+
+* Difficulté d'un sentier. On saisit la durée en heures et le dénivelé en mètres. Le sentier est "difficile" si la durée dépasse 6 h **ou** si le dénivelé dépasse 1000m ; "facile" si la durée est d'au plus 3 h **et** le dénivelé d'au plus 300 m ; "moyen"" dans les autres cas.
+    -> 1. Ce qui entre : durée en heures et le dénivelé en mètres ; ce qui sort : les difficultés "difficile", "facile" et "moyen".
+
+    -> 2. 
+
+    -> 3.   ALGORITHME Difficulté d'un sentier
+            VARIABLES
+                duree_Heures : REEL
+                denivele : REEL
+                difficile : REEL
+                moyen : REEL
+                facile : REEL
+            DEBUT
+                SI durée_Heures > 6 OU denivele > 1000 ALORS
+                    ECRIRE difficile
+                SINON SI duree_heures <= 3 ET denivele <= 300 ALORS
+                    ECRIRE facile
+                SINON 
+                    ECRIRE moyen
+                FIN SI
+            FIN
+    
+    -> 4.
+
+* Année bissextile. Une année est bissextile si elle est divisible par 4 mais pas par 100, ou si elle est divisible par 400. Demander une année, afficher la réponse. À tester avec 2024, 2026, 1900, 2000.
+    -> 1. Ce qui entre : une année ; ce qui sort : oui ou non.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Année bissextile
+            VARIABLES
+                une_annee : ENTIER
+                anneeBissextile : BOOLEEN
+                nombreEntier : ENTIER
+            DEBUT
+                    nombreEntier <- 
+                    LIRE une_annee
+                SI  une_annee DIV 400 = nombreEntier ET une_annee MOD 400 > 0 OU < 0 ALORS
+                    anneeBissextile <- VRAI 
+                    ECRIRE anneBissextile
+                SINON 
+                    anneeBissextile <- FAUX
+                    ECRIRE anneeBissextile
+                FIN SI
+            FIN
+    
+    -> 4.
+
+* Remise et livraison. On saisit le montant d'un panier. Remise de 10 % à partir de 100 €, de 5 % à partir de 50 €, aucune en dessous. La livraison coûte 6 €, offerte si le montant **après remise** atteint 80 €. Afficher la remise, les frais de livraison et le total à payer.
