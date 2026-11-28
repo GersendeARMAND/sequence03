@@ -514,4 +514,13 @@ Le geste d'une activité de mon ancien métier : conditionner des bocaux de cara
     
     -> 4.
 
+* Nombre premier. Demander un entier supérieur à 1, dire s'il est premier.
+    -> 1. Ce qui entre : un entier supérieur à 1 ; ce qui sort : s'il est premier.
+
+    -> 2.
+
+    -> 3.   
+
+    -> 4.
+
 * 
