@@ -325,16 +325,193 @@ Le geste d'une activité de mon ancien métier : conditionner des bocaux de cara
                 nombreEntier : ENTIER
             DEBUT
                     nombreEntier <- 
-                    LIRE une_annee
-                SI  une_annee DIV 400 = nombreEntier ET une_annee MOD 400 > 0 OU < 0 ALORS
-                    anneeBissextile <- VRAI 
-                    ECRIRE anneBissextile
-                SINON 
-                    anneeBissextile <- FAUX
-                    ECRIRE anneeBissextile
+                        LIRE une_annee
+                SI      une_annee MOD 4 = 0 ET une_annee MOD 100 = 0 ALORS
+                        anneeBissextile <- FAUX
+                        ECRIRE anneebissextile
+                SINON SI une_annee MOD 4 = 0 ET une_annee MOD 100 > 0 OU < 0 ALORS
+                        anneeBissextile <- VRAI 
+                        ECRIRE anneeBissextile
+                SINON SI une_annee MOD 4 = 0 ET une_annee MOD 100 = 0 ET une_année MOD 400 = 0 
+                        anneeBissextile <- VRAI
+                        ECRIRE anneeBissextile
                 FIN SI
             FIN
     
     -> 4.
 
 * Remise et livraison. On saisit le montant d'un panier. Remise de 10 % à partir de 100 €, de 5 % à partir de 50 €, aucune en dessous. La livraison coûte 6 €, offerte si le montant **après remise** atteint 80 €. Afficher la remise, les frais de livraison et le total à payer.
+    -> 1.
+
+    -> 2.
+
+    -> 3.
+
+    -> 4.
+
+## Série 3 -- Boucles
+
+* Compter. Afficher les entiers de 1 à 10, puis de 10 à 1.
+    -> 1. Ce qui entre : les entiers de 1 à 10 ; ce qui sort : les entiers de 1 à 10.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Compter
+            VARIABLES
+                i : ENTIER
+            DEBUT
+                POUR i DE 1 à 10 FAIRE
+                    ECRIRE i
+                FIN POUR
+                POUR i DE 10 à 1 PAS -1 FAIRE
+                    ECRIRE i
+                FIN POUR
+            FIN
+
+    -> 4.
+
+* Table de multiplication. Demander un entier, afficher sa table de 1 à 10 sous la forme "7 x 3 = 21".
+    -> 1. Ce qui entre : un entier ; ce qui sort : une table de multiplication sous la forme "7 x 3 = 21".
+
+    -> 2.
+
+    -> 3.   ALGORITHME Table de multiplication
+            VARIABLES
+                un_entier : ENTIER
+                i : ENTIER
+            DEBUT
+                LIRE un_entier
+                POUR i DE 1 à 10 FAIRE
+                ECRIRE un_entier, "x", i, "=", un_entier * i
+                FIN POUR
+    -> 4.
+
+* Somme. Demander un entier N, afficher la somme des entiers de 1 à N.
+    -> 1. Ce qui entre : un entier N ; ce qui sort : somme des entiers de 1 à N.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Somme
+            VARIABLES
+                N : ENTIER
+                i : ENTIER
+                somme_des_entiers : ENTIER
+            DEBUT
+                    LIRE N
+                    somme_des_entiers <- 0
+                POUR i de 1 à N FAIRE
+                    somme_des_entiers <- somme_des_entiers + i
+                FIN POUR
+                    ECRIRE somme_des_entiers
+            FIN
+
+* Saisie controlée. Demander une note entre 0 et 20, et la redemander tant qu'elle n'est pas valide. Afficher la note retenue.
+    -> 1. Ce qui entre : une note entre 0 et 20 ; ce qui sort : une note valide.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Saisie contrôlée
+            VARIABLES
+                note : ENTIER
+                note_valide : ENTIER
+            DEBUT
+                LIRE note
+            TANT QUE note < 0 OU note > 20 FAIRE
+                ECRIRE "note invalide. Recommencez (entre 0 et 20)"
+                LIRE note
+            FIN TANT QUE
+                ECRIRE "La note retenue est : ", note
+            FIN
+    
+    -> 4.
+
+* Moyenne. L'utilisateur saisit des notes, une par une, et tape -1 pour terminer. Afficher le nombre de notes et leur moyenne. Que se passe-t-il s'il tape -1 tout de suite ?
+    -> 1. Ce qui entre : des notes ; ce qui sort : le nombre de notes et leur moyenne.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Moyenne
+            VARIABLES
+                note : REEL
+                nombre_de_notes : ENTIER
+                moyenne : REEL
+                somme : REEL
+            DEBUT
+                somme <- 0
+                nombre_de_notes <- 0
+                LIRE note
+            TANT QUE note <> -1 FAIRE
+                somme <- somme + note
+                nombre_de_notes <- nombre_de_notes + 1
+                ECRIRE "Entrez une autre note (-1 pour terminer)"
+                LIRE note
+            FIN TANT QUE
+            SI nombre_de_notes > 0 ALORS
+                moyenne <- somme / nombre_de_notes
+                ECRIRE "nombre_de_notes : ", nombre_de_notes
+                ECRIRE "moyenne : ", moyenne
+            SINON
+                ECRIRE "aucune note saisie"
+            FIN SI
+            FIN
+
+    -> 4.
+
+* Nombre mystère. Le nombre à deviner vaut 42. L'utilisateur propose des nombres ; le programme répond "trop grand" ou "trop petit" jusqu'à ce qu'il trouve, puis affiche le nombre d'essais.
+    -> 1. Ce qui entre : des nombres ; ce qui sort : le nombre d'essais.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Nombre mystère
+            VARIABLES
+                nombre : ENTIER
+                nombre_essais : ENTIER
+                bon_nombre : ENTIER
+            DEBUT
+                        bon_nombre <- 42
+                        nombre_essais <- 0
+                        LIRE nombre
+                        nombre_essais <- nombre_essais + 1
+                TANT QUE nombre <> bon_nombre FAIRE
+                    SI nombre < bon_nombre ALORS
+                        ECRIRE "Trop petit"
+                    SINON 
+                        ECRIRE "Trop grand"
+                    FIN SI
+                        ECRIRE "Essayez encore"
+                        LIRE nombre
+                        nombre_essais <- nombre_essais + 1
+                FIN TANT QUE
+                        ECRIRE "Bravo ! Le bon nombre était bien ", bon_nombre
+                        ECRIRE "Nombre_essais : ", nombre_essais
+                FIN
+
+    -> 4.
+
+* Factorielle. Demander un entier N positif ou nul, afficher N! (le produit des entiers de 1 à N ; par convention 0! vaut 1).
+    -> 1. Ce qui entre : un entier N positif ou nul ; ce qui sort : N!.
+
+    -> 2.
+
+    -> 3.   ALGORITHME Factorielle
+            VARIABLES
+                N : ENTIER
+                fact : ENTIER
+                i : ENTIER
+            DEBUT
+                    ECRIRE "un entier positif ou nul"
+                    LIRE N
+                TANT QUE N < 0 FAIRE
+                    ECRIRE "N doit être positif ou nul. Recommencez."
+                    LIRE N
+                FIN TANT QUE
+                    fact <- 1
+                POUR i de 1 à N FAIRE
+                    fact <- fact * i
+                FIN POUR
+                    ECRIRE N, "! = ", fact
+            FIN
+    
+    -> 4.
+
+* 
